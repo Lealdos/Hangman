@@ -81,15 +81,13 @@ DATA = [
 
 
 def run():
-    all_pythondevs = list(filter(lambda worker: worker["language"]=="python", DATA))
-    all_pythondevs =list(map(lambda worker:worker["name"], all_pythondevs))
-    all_platziworker = list(filter(lambda worker:worker["organization"]=="Platzi",DATA))
-    all_platziworker =list(map(lambda worker:worker["name"],all_platziworker))
+    all_pythondevs = map(lambda worker:worker["name"], list(filter(lambda worker: worker["language"]=="python", DATA)))
+    all_platziworker = map(lambda worker:worker["name"] ,list(filter(lambda worker:worker["organization"]=="Platzi",DATA)))
     adults = list(filter(lambda worker: worker["age"]>=18, DATA ))
     adults = list(map(lambda worker:worker["name"], adults))
     
     old_people = list(map(lambda worker: worker |{"old": worker['age']>=70}, DATA))
-    for worker in all_platziworker:
+    for worker in all_pythondevs:
         print(worker)
 
 
