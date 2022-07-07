@@ -40,11 +40,25 @@ def draw(message: int, random_word: str,lives: int ,character: str, hangman: lis
     match message:
         case 1:
             print(f"\nYOU WIN! \nThe word is: {random_word}")
+            print("__   _______ _   _   _    _ _____ _   _ ")
+            print("\ \ / /  _  | | | | | |  | |_   _| \ | |")
+            print(" \ V /| | | | | | | | |  | | | | |  \| |")
+            print("  \ / | | | | | | | | |/\| | | | | . ` |")
+            print("  | | \ \_/ / |_| | \  /\  /_| |_| |\  |")
+            print("  \_/  \___/ \___/   \/  \/ \___/\_| \_/")
+                                        
         case 2:
             print(f"\nYou already used this character: {character}\nlives: {lives}\n{hangman}")
         case 3:
             print(f"\nYou lose, word was:{random_word}")
-
+            print('▄██   ▄         ▄██████▄       ███    █▄        ▄█             ▄██████▄          ▄████████         ▄████████')
+            print('███   ██▄      ███    ███      ███    ███      ███            ███    ███        ███    ███        ███    ███')
+            print('███▄▄▄███      ███    ███      ███    ███      ███            ███    ███        ███    █▀         ███    █▀')
+            print('▀▀▀▀▀▀███      ███    ███      ███    ███      ███            ███    ███        ███              ▄███▄▄▄ ')
+            print('▄██   ███      ███    ███      ███    ███      ███            ███    ███      ▀███████████      ▀▀███▀▀▀ ')
+            print('███   ███      ███    ███      ███    ███      ███            ███    ███               ███        ███    █▄ ')
+            print('███   ███      ███    ███      ███    ███      ███▌    ▄      ███    ███         ▄█    ███        ███    ███ ')
+            print('▀█████▀        ▀██████▀       ████████▀       █████▄▄██       ▀██████▀        ▄████████▀         ██████████')
 
 def guess(random_word:str)->str:
     """
