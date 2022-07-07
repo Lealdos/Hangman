@@ -39,7 +39,7 @@ def draw(message: int, random_word: str,lives: int ,character: str, hangman: lis
     """
     match message:
         case 1:
-            print(f"\nYOU WIN! \nThe word is: {random_word}")
+            print(f"\nYOU WIN! \nThe word is: {random_word}\n")
             print("__   _______ _   _   _    _ _____ _   _ ")
             print("\ \ / /  _  | | | | | |  | |_   _| \ | |")
             print(" \ V /| | | | | | | | |  | | | | |  \| |")
@@ -50,7 +50,7 @@ def draw(message: int, random_word: str,lives: int ,character: str, hangman: lis
         case 2:
             print(f"\nYou already used this character: {character}\nlives: {lives}\n{hangman}")
         case 3:
-            print(f"\nYou lose, word was:{random_word}")
+            print(f"\nYou lose, word was:{random_word}\n")
             print('▄██   ▄         ▄██████▄       ███    █▄        ▄█             ▄██████▄          ▄████████         ▄████████')
             print('███   ██▄      ███    ███      ███    ███      ███            ███    ███        ███    ███        ███    ███')
             print('███▄▄▄███      ███    ███      ███    ███      ███            ███    ███        ███    █▀         ███    █▀')
