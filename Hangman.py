@@ -1,3 +1,4 @@
+from pprint import pprint
 import random
 import os
 import unicodedata
@@ -38,6 +39,13 @@ def draw(message: int, random_word: str,lives: int ,character: str, hangman: lis
     this function return None
     """
     match message:
+        case 0:
+            print('    __  __   ___       _   __   ______   __  ___   ___       _   __')
+            print('   / / / /  /   |     / | / /  / ____/  /  |/  /  /   |     / | / /')
+            print('  / /_/ /  / /| |    /  |/ /  / / __   / /|_/ /  / /| |    /  |/ /')
+            print(' / __  /  / ___ |   / /|  /  / /_/ /  / /  / /  / ___ |   / /|  / ')
+            print('/_/ /_/  /_/  |_|  /_/ |_/   \____/  /_/  /_/  /_/  |_|  /_/ |_/  ')  
+
         case 1:
             print(f"\nYOU WIN! \nThe word is: {random_word}\n")
             print("__   _______ _   _   _    _ _____ _   _ ")
@@ -81,12 +89,11 @@ def guess(random_word:str)->str:
     lives = 5
     for i in range(len(random_word)):
         hangman.append("-")
-
     print(hangman)
     while True:
         if hangman == control_chain:
             os.system("cls")
-            return draw(1,random_word,lives,x,hangman)
+            return draw(1,random_word,lives,"",hangman)
         find = False
         x = input("enter a letter: ")
         while True:
@@ -128,8 +135,9 @@ def run()->None:
     -----
     this function return None
     """
-    print("¡Guess the word! \n You have 5 live")
     aleatorio = word_random()
+    draw(0,"",0,"",[])
+    print("\n¡Guess the word! \nYou have 5 live")
     guess(aleatorio)
 
 if __name__ == '__main__':
